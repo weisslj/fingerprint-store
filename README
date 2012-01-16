@@ -27,6 +27,8 @@ Dependencies
 ------------
 
 * python >= 2.6
+* mutagen >= 1.21
+  http://code.google.com/p/mutagen/
 * pyacoustid
   https://github.com/sampsyo/pyacoustid
 * pyofa/python-musicdns (optional)
