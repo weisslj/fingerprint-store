@@ -1,0 +1,33 @@
+fingerprint-store
+=================
+
+This tool is meant as a helper script to MusicBrainz Picard [1] or Acoustid
+Fingerprinter [2]. When using these programs to submit new fingerprints, they
+generally can't return and store a track id into the file tags, since they have
+to be generated first (which usually takes up to one hour). With this script it
+is possible to easily do this later. Also supports MusicDNS PUID.
+
+[1] http://musicbrainz.org/doc/MusicBrainz_Picard
+[2] http://acoustid.org/fingerprinter
+
+
+Examples
+--------
+
+* List all existing fingerprint track ids in your music files:
+  fingerprint-store -l -R audio/
+* Calculate, lookup and store fingerprints of files which don't have one:
+  fingerprint-store -w *.mp3
+* Remove all stored MusicDNS PUIDs:
+  fingerprint-store -r *.mp3
+
+Use --help for more options
+
+Dependencies
+------------
+
+* python >= 2.6
+* pyacoustid
+  https://github.com/sampsyo/pyacoustid
+* pyofa/python-musicdns (optional)
+  http://furius.ca/pyofa/
