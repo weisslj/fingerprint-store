@@ -201,9 +201,9 @@ def main(argv=None):
     if not paths:
         parser.error('no files specified')
 
-    if options.jobs > 1:
+    if options.jobs > 1 and options.write and len(paths) > 1:
         p = Pool(processes=options.jobs)
-        p.map(handle_file, paths, 25)
+        p.map(handle_file, paths, min(len(paths)/options.jobs, 25))
     else:
         for path in paths:
             handle_file(path)
