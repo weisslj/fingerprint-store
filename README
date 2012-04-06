@@ -19,7 +19,7 @@ Examples
 * Calculate, lookup and store fingerprints of files which don't have one:
   fingerprint-store -w *.mp3
 * Remove all stored MusicDNS PUIDs:
-  fingerprint-store -r *.mp3
+  fingerprint-store -t m -r *.mp3
 
 Use --help for more options
 
